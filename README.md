@@ -9,6 +9,11 @@ Let's say we have a Nextjs project -
 TODO!
 
 
+## Steps
+
+- Prepare .env files (.env .env.production)
+- Add all those files (.env .env.production) to azure devops library as secure files. You can download these secure files in the build machine using a DownloadSecureFile@1 pipeline task (yml). This way we are making sure the correct .env file is provided in the build machine before the task 
+```yarn build --mode development``` in the pipeline. And for the web.config file, should be downloaded into the build folder (after the yarn build task) before arhiving for artifact.
 
 ```
 # nextjs project pipeline
