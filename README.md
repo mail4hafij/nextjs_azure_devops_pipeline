@@ -12,7 +12,7 @@ TODO!
 ## Steps
 
 - Prepare .env files (.env .env.production).
-- Prepare the ecosystem.config.js fil.
+- Prepare the ecosystem.config.js file.
 ```
 module.exports = {
   apps: [
