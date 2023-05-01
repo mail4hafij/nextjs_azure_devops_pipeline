@@ -13,6 +13,7 @@ TODO!
 
 - Prepare .env files (.env .env.production) and ecosystem.config.js file.
 - Add all those files (.env .env.production and ecosystem.config.js) to azure devops library as secure files. You can download these secure files in the build machine using a DownloadSecureFile@1 pipeline task (yml). This way we are making sure the correct .env file is provided in the build machine.
+- For the release pipeline set the startup command ```pm2 start /home/site/wwwroot/ecosystem.config.js --no-daemon```
 
 <img src="/pipeline_library.png" />
 
