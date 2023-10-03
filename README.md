@@ -5,10 +5,6 @@ Let's say we have a Nextjs project -
 - is maintained with yarn package management
 - has .env files in the root (usually .env files are not part of a git repo)
 
-### Good to know
-TODO!
-
-
 ## Steps
 
 - Prepare .env files (.env .env.production).
