@@ -91,12 +91,12 @@ steps:
       # rootFolderOrFile: "$(Build.ArtifactStagingDirectory)"
       rootFolderOrFile: "$(projectFolder)"
       archiveType: "zip"
-      archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip"
+      archiveFile: "$(Build.ArtifactStagingDirectory)/next.zip"
       includeRootFolder: false
 
   # Publish the zip file
   - task: PublishBuildArtifacts@1
     inputs:
-      pathtoPublish: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip"
+      pathtoPublish: "$(Build.ArtifactStagingDirectory)/next.zip"
 
 ```
