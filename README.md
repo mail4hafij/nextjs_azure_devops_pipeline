@@ -100,3 +100,5 @@ steps:
       pathtoPublish: "$(Build.ArtifactStagingDirectory)/next.zip"
 
 ```
+- For the release pipeline, in the Deploy Azure App Service (Linux machine) make sure to have the following command in the Startup command
+``` pm2 start /home/site/wwwroot/ecosystem.config.js --no-daemon ```
