@@ -7,7 +7,7 @@ Let's say we have a Nextjs project -
 
 ## Steps
 
-- Prepare .env files (.env .env.production).
+- Prepare .env files (.env OR .env.production).
 - Prepare the ecosystem.config.js file.
 ```
 module.exports = {
