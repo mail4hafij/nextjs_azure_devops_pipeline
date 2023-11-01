@@ -5,7 +5,7 @@ Let's say we have a Nextjs project -
 - is maintained with yarn package management
 - has .env files in the root (usually .env files are not part of a git repo)
 
-## Steps
+### Prepare files for the Azure Library
 
 - Prepare the .env file (OR .env.production).
 - Prepare the ecosystem.config.js file.
@@ -23,11 +23,11 @@ module.exports = {
 };
 ```
 - Add all those files (.env OR .env.production and ecosystem.config.js) to azure devops library as secure files. You can download these secure files in the build machine using a DownloadSecureFile@1 pipeline task (yml). This way we are making sure the correct .env file is provided in the build machine.
-- For the release pipeline set the startup command ```pm2 start /home/site/wwwroot/ecosystem.config.js --no-daemon```
 
 
 <img src="/pipeline_library.png" />
 
+### Azure Build pipeline
 ```
 # nextjs project pipeline
 
@@ -100,5 +100,6 @@ steps:
       pathtoPublish: "$(Build.ArtifactStagingDirectory)/next.zip"
 
 ```
+### Azure Release pipeline
 - In the release pipeline task ```Deploy Azure App Service (Linux machine)```, make sure to have the following command in the Startup command
 ``` pm2 start /home/site/wwwroot/ecosystem.config.js --no-daemon ```
