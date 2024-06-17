@@ -68,6 +68,13 @@ steps:
       targetFolder: "$(projectFolder)"
       cleanTargetFolder: false
 
+  # Rename the .env.production file to .env before the build
+  - task: PowerShell@2
+    inputs:
+      targetType: 'inline'
+      script: |
+        Rename-Item -Path $(projectFolder)\.env.production -NewName $(projectFolder)\.env
+
   # Run the yarn build
   - script: |
       yarn build
